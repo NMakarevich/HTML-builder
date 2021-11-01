@@ -12,7 +12,3 @@ fsp.readdir(source, {withFileTypes: true})
     let readStream = fs.createReadStream(path.join(source, file.name), 'utf-8');
     readStream.pipe(writeStream)
   }))
-
-  // let readStream = fs.createReadStream(path.join(source, file.name), 'utf-8');
-  //   let writeStream = fs.createWriteStream(dist);
-  //   readStream.pipe(writeStream)
