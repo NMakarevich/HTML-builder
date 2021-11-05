@@ -8,5 +8,5 @@ fs.readdir(path.join(__dirname, 'secret-folder'), {withFileTypes: true})
     const fileName = file.name.slice(0, file.name.lastIndexOf('.'));
     const fileExt = path.extname(file.name.toString()).slice(1)
     fs.stat(path.join(__dirname, 'secret-folder', file.name))
-      .then(Stats => console.log(`${fileName} - ${fileExt} - ${(Stats.size / 1024).toFixed(3)}kb`) )
+      .then(Stats => console.log(`${fileName} - ${fileExt} - ${(Stats.size)}bytes`) )
   }))
