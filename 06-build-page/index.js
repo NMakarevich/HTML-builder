@@ -19,7 +19,7 @@ function copyAssets(source, dist) {
       fsP.readdir(dist, {withFileTypes: true})
         .then(copiedList => copiedList.forEach(copiedFile => {
             if (!list.map(item => item.name).includes(copiedFile.name)) {    
-              fs.rm(path.join(dist, copiedFile.name), (err) => {if(err) throw err});
+              fs.rm(path.join(dist, copiedFile.name), {recursive: true}, (err) => {if(err) throw err});
             }
           })
         )
